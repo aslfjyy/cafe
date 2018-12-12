@@ -1,0 +1,9 @@
+.single-menu {
+	transition: all 0.6s;
+}
+.single-menu:hover{
+	transform: scale(1.15);
+}
+.primary-btn text-uppercase:hover{
+	color: white;
+}
