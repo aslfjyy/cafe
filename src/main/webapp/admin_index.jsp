@@ -249,7 +249,7 @@
 			id: 13,
 			pid: 3,
 			icon: '',
-			url: 'addorder.html',
+			url: 'addorder.jsp',
 			name: '新增订单',
 
 		}, {

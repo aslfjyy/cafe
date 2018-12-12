@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-	<html lang="zxx" class="no-js">
+<html lang="zxx" class="no-js">
  <head>
 		<!-- Mobile Specific Meta -->
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -31,16 +31,7 @@
 			<link rel="stylesheet" href="css/main.css">
 			<link rel="stylesheet" href="css/index_picture.css" />
 		</head>
- <script type="text/javascript">
-     $(function(){
-         var username=$("[name=user]").val();
-         if (""!=username){
-             $("#enter").remove();
-             $("#jump").append("<a href=\"#\" id=\"enter\"  style=\"color: white;\">"+username+"</a>&nbsp;&nbsp;<a href=\"loginout.do\">退出登录</a>");
-         }
-     })
 
- </script>
 		<body>
 
 			  <header id="header" id="home">
@@ -52,7 +43,7 @@
 										<li id="jump">
 											<a href="tologin.do" id="enter" class="primary-btn text-uppercase" style="color: brown;">注册/登录</a>
 										</li>
-									<input type="text" value="${user.userName}" name="user">
+									<input type="hidden" value="${user.userName}" name="user">
 				  					<li>
 				  						<a href="#">(086) 9527 036 0036</a>
 				  					</li>				  					
@@ -495,7 +486,16 @@
 			<script src="js/mail-script.js"></script>	
 			<script src="js/main.js"></script>	
 		</body>
+ <script type="text/javascript">
+     $(function(){
+         var username=$("[name=user]").val();
+         if (""!=username){
+             $("#enter").remove();
+             $("#jump").append("<a href=\"#\" id=\"enter\"  style=\"color: white;\">"+username+"</a>&nbsp;&nbsp;<a href=\"loginout.do\">退出登录</a>");
+         }
+     })
 
+ </script>
 	</html>
 
 

@@ -17,7 +17,7 @@ public class IndustrySMS
 	private static String accountSid = Config.ACCOUNT_SID;
 
 	private static int sms=setSms();
-	private static String smsContent = "【妮可茶社连锁店】您的验证码为"+sms+"，请于{2}分钟内正确输入，如非本人操作，请忽略此短信。";
+	private static String smsContent ="【cafe咖啡店】您的验证码为"+sms+"，请于"+1+"分钟内正确输入，如非本人操作，请忽略此短信。";
 
 	public static int getSms() {
 		return sms;

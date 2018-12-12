@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.annotation.Resource;
@@ -42,9 +43,9 @@ public class UserController {
           model.addAttribute("user",user1);
            if (roles.size()>=3){
                System.out.println("进入后台");
-               return "admin_index";
+               return "redirect:admin_index.jsp";
            }else{
-               return "index";
+               return "redirect:index.jsp";
            }
        }else{
            model.addAttribute("errormesg","用户名或密码错误");
@@ -70,9 +71,11 @@ public class UserController {
              return "注册成功";
     }
     @RequestMapping("/loginout.do")
-    public String loginout(HttpSession session){
-        session.invalidate();
-        return "index";
+    public String loginout(HttpSession session,SessionStatus sessionStatus){
+        session.removeAttribute("user");
+        sessionStatus.setComplete();
+        System.out.println(111);
+        return "redirect:index.jsp";
     }
     @RequestMapping("/forget.do")
     @ResponseBody
