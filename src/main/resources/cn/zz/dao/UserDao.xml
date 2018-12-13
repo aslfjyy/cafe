@@ -15,4 +15,7 @@
     <select id="getRoles" resultType="String">
       select b.role_name from t_user as a,t_role as b,t_user_role as c where a.id=c.user_id and b.role_id=c.role_id and a.username=#{username}
     </select>
+    <select id="findUserInfo" resultType="cn.zz.entity.User">
+        select username,phone,role_name from t_user a,t_role b,t_user_role c where a.id=c.user_id and b.id=c.role_id
+    </select>
 </mapper>

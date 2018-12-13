@@ -42,8 +42,7 @@ public class UserController {
            Set<String> roles = userService.getRoles(user1.getUserName());
           model.addAttribute("user",user1);
            if (roles.size()>=3){
-               System.out.println("进入后台");
-               return "redirect:admin_index.jsp";
+               return "redirect:admin/admin_index.jsp";
            }else{
                return "redirect:index.jsp";
            }
@@ -51,7 +50,6 @@ public class UserController {
            model.addAttribute("errormesg","用户名或密码错误");
            return "redirect:/tologin.do";
        }
-
     }
     @RequestMapping("/tologin.do")
     public String tologin(Model model,RedirectAttributes redirect){
@@ -74,8 +72,7 @@ public class UserController {
     public String loginout(HttpSession session,SessionStatus sessionStatus){
         session.removeAttribute("user");
         sessionStatus.setComplete();
-        System.out.println(111);
-        return "redirect:index.jsp";
+        return "redirect:login.jsp";
     }
     @RequestMapping("/forget.do")
     @ResponseBody
@@ -94,5 +91,10 @@ public class UserController {
     public String reset(User user){
         userService.resetPwd(user);
         return "重置成功";
+    }
+    //后台管理跳至首页
+    @RequestMapping("/backtoIndex.do")
+    public String back(){
+        return "redirect:index.jsp";
     }
 }

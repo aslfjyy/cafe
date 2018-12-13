@@ -493,6 +493,9 @@
              $("#enter").remove();
              $("#jump").append("<a href=\"#\" id=\"enter\"  style=\"color: white;\">"+username+"</a>&nbsp;&nbsp;<a href=\"loginout.do\">退出登录</a>");
          }
+         $(".single-menu").on('click',function(){
+             window.location.href="product.jsp";
+		 })
      })
 
  </script>

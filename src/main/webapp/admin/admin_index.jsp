@@ -42,7 +42,8 @@
 					</div>
 					<div class="bk-settings-section">
 						<div class="headerUser">
-							<a class="user-info clickBombbox" href="javascript:void(0)" data-position="bottom" data-type="arrow"> 欢迎你,${user.userName} <i class="iconfont icon-iconfonticontrianglecopy"></i></a>
+							<input type="hidden" name="hidden" value="${user.userName}">
+							<a class="user-info clickBombbox" href="javascript:void(0)" data-position="bottom" data-type="arrow">欢迎你，${user.userName} <i class="iconfont icon-iconfonticontrianglecopy"></i></a>
 							<div class="Bombbox">
 								<ul class="usercz menulist">
 									<li class="column-name">
@@ -191,14 +192,14 @@
 	var data = [{
 			id: 2,//默认设置显示页时该值必须保持为2,不为2时将出错
 			pid: 0,
-			url: "index_home.html", //地址自定义 但需要和homepage保持一致
+			url: "index_home.jsp", //地址自定义 但需要和homepage保持一致
 			icon: 'iconfont icon-home',
 			name: '系统首页',
 		},
 		{
 			id: 1,
 			pid: 0,
-			url: "product_Manage.html",
+			url: "product_Manage.jsp",
 			icon: 'iconfont icon-iconsp2',
 			name: '产品管理',
 		},
@@ -256,8 +257,8 @@
 			id: 14,
 			pid: 3,
 			icon: '',
-			url: 'product.html',
-			name: '未完成订单',
+			url: 'product.jsp',
+			name: '查看订单',
 
 		},
 		/*{
@@ -353,7 +354,9 @@ function dropout(){
 	 icon:1,
     }, 
 	function(){
-	  location.href="login.html";  
+	  location.href="/loginout.do";
    });
 }
+</script>
+<script type="text/javascript">
 </script>

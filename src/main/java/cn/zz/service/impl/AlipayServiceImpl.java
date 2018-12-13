@@ -21,12 +21,11 @@ public class AlipayServiceImpl implements AlipayService {
         alipayTradePagePayRequest.setReturnUrl(AlipayConfig.return_url);
         //异步跳转
         alipayTradePagePayRequest.setNotifyUrl(AlipayConfig.notify_url);
-         String out_trade_no=orderList.getOrderId()+"";
+         String out_trade_no=orderList.getId()+"";
          String total_amount=orderList.getPaymoney()+"";
-         String subject=orderList.getSeatNum()+"号座位顾客的点餐";
          alipayTradePagePayRequest.setBizContent("{\"out_trade_no\":\""+ out_trade_no +"\","
                  + "\"total_amount\":\""+ total_amount +"\","
-                 + "\"subject\":\""+ subject +"\","
+               /*  + "\"subject\":\""+ subject +"\","*/
                  + "\"product_code\":\"FAST_INSTANT_TRADE_PAY\"}");
         try {
             AlipayTradePagePayResponse alipayTradePagePayResponse = alipayClient.pageExecute(alipayTradePagePayRequest);

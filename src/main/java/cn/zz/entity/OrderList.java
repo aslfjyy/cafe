@@ -5,18 +5,26 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import java.util.Date;
 
 public class OrderList {
-    private Integer orderId;
+    private Integer id;
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date orderTime;
     private Double paymoney;
-    private Integer seatNum;
+    private Integer productnum;
+    private Product product;
 
-    public Integer getOrderId() {
-        return orderId;
+    public Product getProduct() {
+        return product;
     }
 
-    public void setOrderId(Integer orderId) {
-        this.orderId = orderId;
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+    public void setid(Integer id) {
+        this.id = id;
     }
 
     public Date getOrderTime() {
@@ -35,12 +43,16 @@ public class OrderList {
         this.paymoney = paymoney;
     }
 
-    public Integer getSeatNum() {
-        return seatNum;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public void setSeatNum(Integer seatNum) {
-        this.seatNum = seatNum;
+    public Integer getProductnum() {
+        return productnum;
+    }
+
+    public void setProductnum(Integer productnum) {
+        this.productnum = productnum;
     }
 
     public OrderList() {

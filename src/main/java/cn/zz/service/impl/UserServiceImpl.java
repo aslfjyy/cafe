@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.util.List;
 import java.util.Set;
 
 @Service
@@ -14,6 +15,12 @@ import java.util.Set;
 public class UserServiceImpl implements UserService {
     @Resource
     private UserDao userDao;
+
+    @Override
+    public List<User> findUserInfo() {
+        return null;
+    }
+
     public User findByUserName(String userName){
         return userDao.findByName(userName);
     }
